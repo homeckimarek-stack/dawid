@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="CuprumCut Barbershop Lubin – profesjonalne strzyżenie męskie. Zarezerwuj online."/>
+<title>CuprumCut Barbershop – Lubin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0a0a0a;--s1:#0e0e0e;--s2:#141210;--s3:#191614;
+  --cu:#b87333;--cl:#dfaf8d;--cd:#7a4c1e;
+  --tx:#e6ddd4;--mu:#867d75;--di:#4a443e;
+  --bo:#242018;--bm:#312a22;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block}
+
+/* ── Animations ── */
+@keyframes heroUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.h1{animation:heroUp .9s ease both}
+.h2{animation:heroUp .9s ease .28s both}
+.h3{animation:heroUp .9s ease .52s both}
+.h4{animation:heroUp .9s ease .76s both}
+.hf{animation:fadeIn 1.2s ease 1s both}
+
+/* ── Layout ── */
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+.section{padding:100px 40px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--bo) 25%,var(--bo) 75%,transparent)}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cu);font-weight:600;margin-bottom:18px;font-family:'Outfit',sans-serif}
+.eyebrow.center{justify-content:center}
+.eyebrow-rule{width:36px;height:1px;background:var(--cu);display:inline-block;flex-shrink:0}
+.section-title{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2rem,4.5vw,3rem);color:var(--tx);line-height:1.08;letter-spacing:-.015em}
+.copper{color:var(--cu)}
+.copper-light{color:var(--cl)}
+
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;transition:background .35s,border-color .35s,backdrop-filter .35s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,10,.96);border-color:var(--bo);backdrop-filter:blur(18px)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;letter-spacing:.12em;color:var(--tx)}
+.nav-logo-sub{display:block;font-size:.52rem;letter-spacing:.22em;color:var(--mu);font-weight:400;margin-top:1px;font-family:'Outfit',sans-serif}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-a{color:var(--mu);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:color .22s}
+.nav-a:hover{color:var(--cu)}
+.nav-mobile-cta{color:var(--cu);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;display:none}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--cu);color:#090806;font-family:'Outfit',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;padding:18px 44px;border:2px solid var(--cu);cursor:pointer;transition:background .28s,color .28s;white-space:nowrap}
+.btn:hover{background:transparent;color:var(--cu)}
+.btn-full{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--cu);color:#090806;font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;padding:22px;border:2px solid var(--cu);cursor:pointer;transition:background .28s,color .28s;width:100%}
+.btn-full:hover{background:transparent;color:var(--cu)}
+
+/* ── Hero ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:130px 40px 80px;position:relative;overflow:hidden;background:var(--bg)}
+.hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 15% 55%,rgba(184,115,51,.055) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 90% 20%,rgba(184,115,51,.03) 0%,transparent 50%)}
+.hero-rule{position:absolute;left:40px;top:12%;bottom:12%;width:1px;background:linear-gradient(to bottom,transparent,var(--bo) 30%,var(--bo) 70%,transparent)}
+.hero-h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(3.4rem,9.5vw,9rem);line-height:.87;letter-spacing:-.025em;color:var(--tx);margin-bottom:36px}
+.hero-sub{font-size:clamp(.95rem,2vw,1.15rem);font-weight:300;color:var(--mu);max-width:460px;line-height:1.75;margin-bottom:52px;letter-spacing:.01em}
+.hero-ctas{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-bottom:80px}
+.hero-phone{display:flex;align-items:center;gap:8px;color:var(--mu);font-size:.9rem;letter-spacing:.06em;transition:color .22s}
+.hero-phone:hover{color:var(--tx)}
+.stats-bar{display:flex;gap:56px;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--bo)}
+.stat-val{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--cu);line-height:1;letter-spacing:-.02em}
+.stat-lbl{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-top:6px}
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--di);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;animation:fadeIn 2s ease 2s both}
+
+/* ── About ── */
+#about{background:var(--s1)}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px 72px;align-items:start}
+.rating-block{background:var(--bg);border:1px solid var(--bo);padding:24px 28px;display:flex;align-items:center;gap:22px;margin:28px 0 20px}
+.rat-num{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;color:var(--cu);line-height:1}
+.rat-div{border-left:1px solid var(--bo);padding-left:20px}
+.stars{display:flex;gap:3px;margin-bottom:8px}
+.fact-tile{display:flex;align-items:flex-start;gap:12px;padding:16px 18px;border:1px solid var(--bo);background:var(--s2);margin-bottom:12px}
+
+/* ── Pricing ── */
+#cennik{background:var(--bg)}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px;background:var(--bo)}
+.price-card{padding:40px 28px 36px;display:flex;flex-direction:column;transition:transform .28s;position:relative;overflow:hidden;cursor:default}
+.price-card::before{content:'';position:absolute;inset:0 auto 0 0;width:3px;background:var(--cu);transform:scaleY(0);transform-origin:bottom;transition:transform .36s ease}
+.price-card:hover::before{transform:scaleY(1)}
+.price-card:hover{transform:translateY(-3px)}
+.pc-badge{display:inline-flex;align-items:center;gap:6px;background:var(--cd);color:var(--cl);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;padding:4px 10px;margin-bottom:16px;align-self:flex-start}
+.pc-name{font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);margin-bottom:14px}
+.pc-price{display:flex;align-items:flex-end;gap:5px;margin-bottom:10px}
+.pc-num{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.4rem);font-weight:900;color:var(--cu);line-height:1}
+.pc-zl{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cl);padding-bottom:4px}
+.pc-dur{display:flex;align-items:center;gap:6px;color:var(--di);font-size:.7rem;letter-spacing:.07em;margin-bottom:18px}
+.pc-rule{height:1px;background:var(--bo);margin-bottom:16px}
+.pc-desc{font-size:.85rem;font-weight:300;color:var(--mu);line-height:1.68;flex:1}
+
+/* ── Portfolio ── */
+#portfolio{background:var(--s2)}
+.bento{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:4px}
+.bento-item{overflow:hidden;position:relative}
+.bento-item img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease,filter .4s ease;filter:grayscale(.25) brightness(.8)}
+.bento-item:hover img{transform:scale(1.06);filter:grayscale(0) brightness(.92)}
+.bento-item::after{content:'';position:absolute;inset:0;border:0px solid var(--cu);transition:border-width .3s ease;pointer-events:none;z-index:1}
+.bento-item:hover::after{border-width:2px}
+.bento-main{grid-row:span 2}
+
+/* ── Reviews ── */
+#opinie{background:var(--s1)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.review-card{background:var(--bg);border:1px solid var(--bo);border-top:3px solid var(--cu);padding:44px 32px 36px;position:relative;transition:border-color .28s}
+.review-card:hover{border-color:var(--bm)}
+.review-quote{font-family:'Playfair Display',serif;font-size:5.5rem;line-height:1;color:var(--di);opacity:.35;position:absolute;top:8px;left:22px;user-select:none;pointer-events:none}
+.review-body{position:relative;z-index:1}
+.review-text{font-size:.95rem;font-weight:300;color:var(--tx);line-height:1.82;margin:20px 0 24px}
+.review-author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--bo)}
+.review-avatar{width:38px;height:38px;border-radius:50%;background:var(--cd);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--cl);flex-shrink:0}
+.review-name{font-weight:600;font-size:.83rem;color:var(--tx);letter-spacing:.04em}
+.review-src{font-size:.67rem;color:var(--mu);letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+
+/* ── Map ── */
+#mapa{background:var(--bg);padding:100px 40px 0}
+.map-frame{width:100%;height:480px;border:none;display:block;filter:grayscale(1) invert(1) contrast(1.2)}
+.parking-bar{background:var(--s1);border-top:1px solid var(--bo);padding:16px 40px;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--mu);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+
+/* ── Footer ── */
+footer{background:#070706;padding:72px 40px 44px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 48px;padding-bottom:52px;border-bottom:1px solid var(--bo);margin-bottom:36px}
+.foot-label{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cu);font-weight:600;margin-bottom:18px}
+.foot-ico-row{display:flex;gap:9px;align-items:flex-start}
+.big-phone{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--tx);letter-spacing:.03em;display:flex;align-items:center;gap:9px}
+.big-hours{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--cu);margin-top:4px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.copy{font-size:.7rem;color:var(--di);letter-spacing:.07em}
+.foot-right{display:flex;align-items:center;gap:20px}
+.social-icon{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid var(--bo);color:var(--mu);transition:border-color .22s,color .22s;flex-shrink:0}
+.social-icon:hover{border-color:var(--cu);color:var(--cu)}
+.foot-sep{width:1px;height:20px;background:var(--bo)}
+.booksy-link{display:flex;align-items:center;gap:7px;color:var(--cu);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:color .22s}
+.booksy-link:hover{color:var(--cl)}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .nav-mobile-cta{display:block}
+  .wrap,.section,#hero,#mapa,footer{padding-left:20px;padding-right:20px}
+  .hero-rule{left:20px}
+  .bento{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}
+  .bento-main{grid-row:span 1;grid-column:span 2}
+  .map-frame{height:300px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero-ctas{flex-direction:column;align-items:flex-start}
+  .btn{width:100%;justify-content:center}
+  .stats-bar{gap:32px}
+  .parking-bar{padding:16px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div style="height:44px;width:auto;display:flex;align-items:center">
+      <svg id="cuprumcut-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" style="height:44px;width:auto" viewBox="0 0 375 252.137314">
+<defs>
+<clipPath id="clip-0">
+<path clip-rule="nonzero" d="M 0.640625 180 L 38 180 L 38 222 L 0.640625 222 Z M 0.640625 180 "/>
+</clipPath>
+<clipPath id="clip-1">
+<path clip-rule="nonzero" d="M 343 181 L 374.359375 181 L 374.359375 221 L 343 221 Z M 343 181 "/>
+</clipPath>
+<clipPath id="clip-2">
+<path clip-rule="nonzero" d="M 79 232 L 94 232 L 94 251.277344 L 79 251.277344 Z M 79 232 "/>
+</clipPath>
+<clipPath id="clip-3">
+<path clip-rule="nonzero" d="M 98 232 L 118 232 L 118 251.277344 L 98 251.277344 Z M 98 232 "/>
+</clipPath>
+<clipPath id="clip-4">
+<path clip-rule="nonzero" d="M 123 232 L 140 232 L 140 251.277344 L 123 251.277344 Z M 123 232 "/>
+</clipPath>
+<clipPath id="clip-5">
+<path clip-rule="nonzero" d="M 146 232 L 162 232 L 162 251.277344 L 146 251.277344 Z M 146 232 "/>
+</clipPath>
+<clipPath id="clip-6">
+<path clip-rule="nonzero" d="M 168 232 L 182 232 L 182 251.277344 L 168 251.277344 Z M 168 232 "/>
+</clipPath>
+<clipPath id="clip-7">
+<path clip-rule="nonzero" d="M 189 232 L 205 232 L 205 251.277344 L 189 251.277344 Z M 189 232 "/>
+</clipPath>
+<clipPath id="clip-8">
+<path clip-rule="nonzero" d="M 210 232 L 225 232 L 225 251.277344 L 210 251.277344 Z M 210 232 "/>
+</clipPath>
+<clipPath id="clip-9">
+<path clip-rule="nonzero" d="M 232 232 L 248 232 L 248 251.277344 L 232 251.277344 Z M 232 232 "/>
+</clipPath>
+<clipPath id="clip-10">
+<path clip-rule="nonzero" d="M 254 232 L 275 232 L 275 251.277344 L 254 251.277344 Z M 254 232 "/>
+</clipPath>
+<clipPath id="clip-11">
+<path clip-rule="nonzero" d="M 281 232 L 296 232 L 296 251.277344 L 281 251.277344 Z M 281 232 "/>
+</clipPath>
+</defs>
+<g clip-path="url(#clip-0)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 21.160156 213.066406 C 25.496094 213.066406 29.039062 211.355469 31.785156 207.925781 L 37.4375 213.75 C 32.953125 218.796875 27.660156 221.320312 21.554688 221.320312 C 15.488281 221.320312 10.476562 219.402344 6.515625 215.554688 C 2.597656 211.714844 0.640625 206.871094 0.640625 201.027344 C 0.640625 195.148438 2.636719 190.25 6.628906 186.332031 C 10.664062 182.410156 15.582031 180.453125 21.382812 180.453125 C 27.867188 180.453125 33.292969 182.921875 37.664062 187.855469 L 32.183594 194.074219 C 29.394531 190.609375 25.929688 188.875 21.78125 188.875 C 18.464844 188.875 15.617188 189.96875 13.246094 192.15625 C 10.910156 194.300781 9.742188 197.222656 9.742188 200.914062 C 9.742188 204.570312 10.855469 207.507812 13.078125 209.734375 C 15.300781 211.957031 17.992188 213.066406 21.160156 213.066406 Z M 21.160156 213.066406 "/>
+</g>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 54.851562 210.691406 C 56.320312 212.503906 58.300781 213.410156 60.789062 213.410156 C 63.277344 213.410156 65.234375 212.503906 66.667969 210.691406 C 68.136719 208.847656 68.871094 206.339844 68.871094 203.175781 L 68.871094 181.355469 L 77.6875 181.355469 L 77.6875 203.460938 C 77.6875 209.1875 76.109375 213.597656 72.941406 216.6875 C 69.777344 219.738281 65.726562 221.265625 60.789062 221.265625 C 55.847656 221.265625 51.78125 219.722656 48.578125 216.628906 C 45.414062 213.539062 43.828125 209.152344 43.828125 203.460938 L 43.828125 181.355469 L 52.648438 181.355469 L 52.648438 203.175781 C 52.648438 206.339844 53.382812 208.847656 54.851562 210.691406 Z M 54.851562 210.691406 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 100.8125 181.355469 C 106.878906 181.355469 111.289062 182.542969 114.039062 184.917969 C 116.828125 187.253906 118.222656 190.871094 118.222656 195.769531 C 118.222656 200.632812 116.789062 204.195312 113.925781 206.453125 C 111.101562 208.714844 106.765625 209.847656 100.925781 209.847656 L 95.667969 209.847656 L 95.667969 220.871094 L 86.847656 220.871094 L 86.847656 181.355469 Z M 101.601562 202.214844 C 104.542969 202.214844 106.539062 201.628906 107.59375 200.460938 C 108.648438 199.257812 109.179688 197.523438 109.179688 195.261719 C 109.179688 192.964844 108.480469 191.339844 107.085938 190.398438 C 105.730469 189.421875 103.597656 188.929688 100.699219 188.929688 L 95.667969 188.929688 L 95.667969 202.214844 Z M 101.601562 202.214844 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 157.167969 194.472656 C 157.167969 200.800781 154.667969 204.894531 149.652344 206.738281 L 159.65625 220.871094 L 148.804688 220.871094 L 140.042969 208.265625 L 133.9375 208.265625 L 133.9375 220.871094 L 125.121094 220.871094 L 125.121094 181.355469 L 140.101562 181.355469 C 146.242188 181.355469 150.613281 182.390625 153.214844 184.46875 C 155.855469 186.539062 157.167969 189.875 157.167969 194.472656 Z M 140.382812 200.632812 C 143.398438 200.632812 145.453125 200.144531 146.542969 199.164062 C 147.636719 198.179688 148.179688 196.640625 148.179688 194.527344 C 148.179688 192.378906 147.617188 190.910156 146.488281 190.121094 C 145.355469 189.324219 143.378906 188.929688 140.550781 188.929688 L 133.9375 188.929688 L 133.9375 200.632812 Z M 140.382812 200.632812 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 176.675781 210.691406 C 178.144531 212.503906 180.125 213.410156 182.609375 213.410156 C 185.097656 213.410156 187.054688 212.503906 188.488281 210.691406 C 189.960938 208.847656 190.691406 206.339844 190.691406 203.175781 L 190.691406 181.355469 L 199.515625 181.355469 L 199.515625 203.460938 C 199.515625 209.1875 197.929688 213.597656 194.765625 216.6875 C 191.597656 219.738281 187.546875 221.265625 182.609375 221.265625 C 177.675781 221.265625 173.601562 219.722656 170.398438 216.628906 C 167.234375 213.539062 165.652344 209.152344 165.652344 203.460938 L 165.652344 181.355469 L 174.46875 181.355469 L 174.46875 203.175781 C 174.46875 206.339844 175.207031 208.847656 176.675781 210.691406 Z M 176.675781 210.691406 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 244.058594 195.996094 L 233.375 217.589844 L 228.117188 217.589844 L 217.492188 195.996094 L 217.492188 220.871094 L 208.667969 220.871094 L 208.667969 181.355469 L 220.597656 181.355469 L 230.773438 203.0625 L 241.003906 181.355469 L 252.878906 181.355469 L 252.878906 220.871094 L 244.058594 220.871094 Z M 244.058594 195.996094 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 280.746094 213.066406 C 285.082031 213.066406 288.621094 211.355469 291.375 207.925781 L 297.027344 213.75 C 292.542969 218.796875 287.25 221.320312 281.140625 221.320312 C 275.074219 221.320312 270.0625 219.402344 266.105469 215.554688 C 262.183594 211.714844 260.226562 206.871094 260.226562 201.027344 C 260.226562 195.148438 262.222656 190.25 266.21875 186.332031 C 270.25 182.410156 275.167969 180.453125 280.972656 180.453125 C 287.453125 180.453125 292.882812 182.921875 297.253906 187.855469 L 291.769531 194.074219 C 288.980469 190.609375 285.511719 188.875 281.371094 188.875 C 278.054688 188.875 275.207031 189.96875 272.832031 192.15625 C 270.496094 194.300781 269.328125 197.222656 269.328125 200.914062 C 269.328125 204.570312 270.4375 207.507812 272.660156 209.734375 C 274.886719 211.957031 277.582031 213.066406 280.746094 213.066406 Z M 280.746094 213.066406 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 314.4375 210.691406 C 315.910156 212.503906 317.886719 213.410156 320.375 213.410156 C 322.859375 213.410156 324.824219 212.503906 326.253906 210.691406 C 327.722656 208.847656 328.457031 206.339844 328.457031 203.175781 L 328.457031 181.355469 L 337.277344 181.355469 L 337.277344 203.460938 C 337.277344 209.1875 335.691406 213.597656 332.527344 216.6875 C 329.363281 219.738281 325.308594 221.265625 320.375 221.265625 C 315.4375 221.265625 311.363281 219.722656 308.164062 216.628906 C 304.996094 213.539062 303.414062 209.152344 303.414062 203.460938 L 303.414062 181.355469 L 312.234375 181.355469 L 312.234375 203.175781 C 312.234375 206.339844 312.96875 208.847656 314.4375 210.691406 Z M 314.4375 210.691406 "/>
+<g clip-path="url(#clip-1)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 363.167969 188.988281 L 363.167969 220.871094 L 354.347656 220.871094 L 354.347656 188.988281 L 343.15625 188.988281 L 343.15625 181.355469 L 374.359375 181.355469 L 374.359375 188.988281 Z M 363.167969 188.988281 "/>
+</g>
+<g clip-path="url(#clip-2)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 87.109375 251.066406 L 79.035156 251.066406 L 79.035156 232.613281 L 86.214844 232.613281 C 87.464844 232.613281 88.539062 232.765625 89.433594 233.0625 C 90.347656 233.363281 91.023438 233.765625 91.464844 234.277344 C 92.308594 235.230469 92.734375 236.300781 92.734375 237.5 C 92.734375 238.941406 92.273438 240.015625 91.359375 240.71875 C 91.023438 240.964844 90.796875 241.125 90.675781 241.195312 C 90.550781 241.246094 90.332031 241.34375 90.011719 241.484375 C 91.15625 241.730469 92.066406 242.25 92.734375 243.042969 C 93.417969 243.8125 93.761719 244.785156 93.761719 245.945312 C 93.761719 247.226562 93.320312 248.363281 92.441406 249.351562 C 91.402344 250.496094 89.628906 251.066406 87.109375 251.066406 Z M 82.148438 240.273438 L 86.109375 240.273438 C 88.359375 240.273438 89.488281 239.503906 89.488281 237.976562 C 89.488281 237.09375 89.214844 236.460938 88.667969 236.070312 C 88.121094 235.6875 87.277344 235.492188 86.136719 235.492188 L 82.148438 235.492188 Z M 82.148438 248.191406 L 87.03125 248.191406 C 88.175781 248.191406 89.046875 248.015625 89.644531 247.660156 C 90.261719 247.289062 90.570312 246.605469 90.570312 245.601562 C 90.570312 243.964844 89.257812 243.148438 86.632812 243.148438 L 82.148438 243.148438 Z M 82.148438 248.191406 "/>
+</g>
+<g clip-path="url(#clip-3)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 103.503906 246.871094 L 101.65625 251.066406 L 98.328125 251.066406 L 106.460938 232.613281 L 109.785156 232.613281 L 117.917969 251.066406 L 114.589844 251.066406 L 112.742188 246.871094 Z M 111.476562 243.992188 L 108.125 236.390625 L 104.769531 243.992188 Z M 111.476562 243.992188 "/>
+</g>
+<g clip-path="url(#clip-4)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 138.640625 238.605469 C 138.640625 241.648438 137.308594 243.570312 134.652344 244.363281 L 139.484375 251.066406 L 135.523438 251.066406 L 131.113281 244.859375 L 127.023438 244.859375 L 127.023438 251.066406 L 123.910156 251.066406 L 123.910156 232.613281 L 130.773438 232.613281 C 133.585938 232.613281 135.605469 233.089844 136.820312 234.039062 C 138.03125 234.988281 138.640625 236.511719 138.640625 238.605469 Z M 130.90625 242.039062 C 132.664062 242.039062 133.859375 241.765625 134.492188 241.222656 C 135.128906 240.675781 135.445312 239.804688 135.445312 238.605469 C 135.445312 237.394531 135.121094 236.566406 134.464844 236.125 C 133.816406 235.671875 132.65625 235.441406 130.980469 235.441406 L 127.023438 235.441406 L 127.023438 242.039062 Z M 130.90625 242.039062 "/>
+</g>
+<g clip-path="url(#clip-5)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 154.636719 251.066406 L 146.558594 251.066406 L 146.558594 232.613281 L 153.738281 232.613281 C 154.984375 232.613281 156.0625 232.765625 156.960938 233.0625 C 157.875 233.363281 158.550781 233.765625 158.992188 234.277344 C 159.835938 235.230469 160.257812 236.300781 160.257812 237.5 C 160.257812 238.941406 159.800781 240.015625 158.886719 240.71875 C 158.550781 240.964844 158.324219 241.125 158.199219 241.195312 C 158.078125 241.246094 157.855469 241.34375 157.539062 241.484375 C 158.683594 241.730469 159.585938 242.25 160.257812 243.042969 C 160.941406 243.8125 161.289062 244.785156 161.289062 245.945312 C 161.289062 247.226562 160.847656 248.363281 159.96875 249.351562 C 158.929688 250.496094 157.152344 251.066406 154.636719 251.066406 Z M 149.671875 240.273438 L 153.632812 240.273438 C 155.886719 240.273438 157.011719 239.503906 157.011719 237.976562 C 157.011719 237.09375 156.738281 236.460938 156.191406 236.070312 C 155.648438 235.6875 154.804688 235.492188 153.660156 235.492188 L 149.671875 235.492188 Z M 149.671875 248.191406 L 154.554688 248.191406 C 155.699219 248.191406 156.570312 248.015625 157.167969 247.660156 C 157.785156 247.289062 158.09375 246.605469 158.09375 245.601562 C 158.09375 243.964844 156.78125 243.148438 154.160156 243.148438 L 149.671875 243.148438 Z M 149.671875 248.191406 "/>
+</g>
+<g clip-path="url(#clip-6)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 181.585938 232.613281 L 181.585938 235.546875 L 171.742188 235.546875 L 171.742188 240.425781 L 180.582031 240.425781 L 180.582031 243.199219 L 171.742188 243.199219 L 171.742188 248.136719 L 181.902344 248.136719 L 181.902344 251.066406 L 168.625 251.066406 L 168.625 232.613281 Z M 181.585938 232.613281 "/>
+</g>
+<g clip-path="url(#clip-7)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 204.050781 238.605469 C 204.050781 241.648438 202.722656 243.570312 200.066406 244.363281 L 204.898438 251.066406 L 200.933594 251.066406 L 196.527344 244.859375 L 192.4375 244.859375 L 192.4375 251.066406 L 189.320312 251.066406 L 189.320312 232.613281 L 196.183594 232.613281 C 199 232.613281 201.015625 233.089844 202.230469 234.039062 C 203.445312 234.988281 204.050781 236.511719 204.050781 238.605469 Z M 196.316406 242.039062 C 198.078125 242.039062 199.273438 241.765625 199.90625 241.222656 C 200.542969 240.675781 200.855469 239.804688 200.855469 238.605469 C 200.855469 237.394531 200.53125 236.566406 199.878906 236.125 C 199.230469 235.671875 198.070312 235.441406 196.394531 235.441406 L 192.4375 235.441406 L 192.4375 242.039062 Z M 196.316406 242.039062 "/>
+</g>
+<g clip-path="url(#clip-8)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 217.542969 235.042969 C 216.640625 235.042969 215.902344 235.230469 215.324219 235.597656 C 214.742188 235.964844 214.449219 236.53125 214.449219 237.285156 C 214.449219 238.027344 214.742188 238.597656 215.324219 239.003906 C 215.902344 239.390625 217.136719 239.8125 219.015625 240.273438 C 220.921875 240.726562 222.347656 241.371094 223.296875 242.199219 C 224.261719 243.023438 224.746094 244.246094 224.746094 245.867188 C 224.746094 247.464844 224.140625 248.769531 222.925781 249.773438 C 221.710938 250.773438 220.117188 251.277344 218.148438 251.277344 C 215.261719 251.277344 212.699219 250.285156 210.464844 248.296875 L 212.417969 245.945312 C 214.285156 247.5625 216.222656 248.375 218.226562 248.375 C 219.230469 248.375 220.023438 248.164062 220.601562 247.742188 C 221.199219 247.300781 221.5 246.730469 221.5 246.023438 C 221.5 245.300781 221.214844 244.75 220.65625 244.363281 C 220.113281 243.957031 219.160156 243.597656 217.800781 243.28125 C 216.449219 242.945312 215.421875 242.648438 214.714844 242.382812 C 214.011719 242.101562 213.386719 241.738281 212.84375 241.300781 C 211.75 240.472656 211.203125 239.203125 211.203125 237.5 C 211.203125 235.792969 211.820312 234.480469 213.054688 233.5625 C 214.304688 232.632812 215.839844 232.167969 217.671875 232.167969 C 218.851562 232.167969 220.023438 232.359375 221.183594 232.746094 C 222.347656 233.136719 223.347656 233.679688 224.191406 234.386719 L 222.527344 236.734375 C 221.984375 236.238281 221.242188 235.835938 220.3125 235.519531 C 219.378906 235.203125 218.457031 235.042969 217.542969 235.042969 Z M 217.542969 235.042969 "/>
+</g>
+<g clip-path="url(#clip-9)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 232.03125 251.066406 L 232.03125 232.613281 L 235.144531 232.613281 L 235.144531 240.613281 L 244.304688 240.613281 L 244.304688 232.613281 L 247.421875 232.613281 L 247.421875 251.066406 L 244.304688 251.066406 L 244.304688 243.519531 L 235.144531 243.519531 L 235.144531 251.066406 Z M 232.03125 251.066406 "/>
+</g>
+<g clip-path="url(#clip-10)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 269.117188 236.96875 C 267.871094 235.671875 266.332031 235.015625 264.503906 235.015625 C 262.671875 235.015625 261.125 235.671875 259.855469 236.96875 C 258.605469 238.273438 257.980469 239.855469 257.980469 241.722656 C 257.980469 243.570312 258.605469 245.144531 259.855469 246.445312 C 261.125 247.75 262.671875 248.398438 264.503906 248.398438 C 266.332031 248.398438 267.871094 247.75 269.117188 246.445312 C 270.386719 245.144531 271.023438 243.570312 271.023438 241.722656 C 271.023438 239.855469 270.386719 238.273438 269.117188 236.96875 Z M 271.414062 248.53125 C 269.550781 250.347656 267.246094 251.25 264.503906 251.25 C 261.757812 251.25 259.449219 250.347656 257.585938 248.53125 C 255.71875 246.703125 254.785156 244.433594 254.785156 241.722656 C 254.785156 238.996094 255.71875 236.726562 257.585938 234.910156 C 259.449219 233.082031 261.757812 232.167969 264.503906 232.167969 C 267.246094 232.167969 269.550781 233.082031 271.414062 234.910156 C 273.28125 236.726562 274.214844 238.996094 274.214844 241.722656 C 274.214844 244.433594 273.28125 246.703125 271.414062 248.53125 Z M 271.414062 248.53125 "/>
+</g>
+<g clip-path="url(#clip-11)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 287.914062 232.613281 C 290.710938 232.613281 292.753906 233.152344 294.039062 234.226562 C 295.320312 235.300781 295.964844 236.957031 295.964844 239.191406 C 295.964844 241.425781 295.308594 243.058594 293.988281 244.097656 C 292.683594 245.136719 290.679688 245.65625 287.96875 245.65625 L 284.695312 245.65625 L 284.695312 251.066406 L 281.582031 251.066406 L 281.582031 232.613281 Z M 288.3125 242.828125 C 290.035156 242.828125 291.207031 242.507812 291.824219 241.851562 C 292.457031 241.1875 292.773438 240.21875 292.773438 238.953125 C 292.773438 237.667969 292.375 236.761719 291.585938 236.230469 C 290.792969 235.707031 289.554688 235.441406 287.863281 235.441406 L 284.695312 235.441406 L 284.695312 242.828125 Z M 288.3125 242.828125 "/>
+</g>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 224.699219 0 C 224.546875 -0.0078125 224.261719 0.136719 223.84375 0.359375 C 220.011719 2.410156 215.246094 10.054688 189.109375 56.101562 L 174.753906 81.386719 L 175.597656 87.242188 C 177.921875 103.441406 175.03125 113 166.496094 117.324219 C 158.640625 121.308594 154.875 126.714844 154.875 134.015625 C 154.875 138.15625 156.199219 142.542969 158.117188 144.722656 C 158.730469 145.425781 159.222656 148.34375 159.40625 152.445312 C 159.65625 157.972656 160.046875 159.660156 161.804688 162.882812 C 164 166.914062 164.359375 167.207031 165.59375 165.976562 C 166.117188 165.453125 165.910156 163.917969 164.941406 161.039062 C 162.527344 153.890625 164.191406 149.660156 169.777344 148.765625 C 178.824219 147.308594 185.554688 137.976562 183.894531 129.1875 C 183.644531 127.875 182.457031 124.824219 181.25 122.40625 C 176.917969 113.71875 178.144531 108.984375 194.429688 71.484375 C 209.128906 37.628906 222.277344 7.050781 223.824219 3.132812 C 224.75 0.789062 225.039062 0.0234375 224.699219 0 Z M 255.371094 23.675781 L 251.097656 26.6875 C 223.277344 46.257812 204.921875 59.777344 204.171875 61.25 C 203.664062 62.242188 201.554688 66.941406 199.484375 71.699219 C 197.417969 76.453125 195.851562 80.453125 195.996094 80.59375 C 196.152344 80.734375 204.347656 73.769531 214.21875 65.113281 C 251.054688 32.824219 250.429688 33.4375 253.75 26.882812 Z M 190.261719 33.394531 C 187.316406 33.414062 183.527344 33.691406 180.910156 34.171875 C 175.585938 35.15625 169.691406 37.730469 165.199219 41.027344 C 163.300781 42.417969 155.511719 50.253906 147.886719 58.4375 C 140.261719 66.621094 132.070312 75.375 129.679688 77.894531 C 125.050781 82.777344 125.042969 82.96875 129.597656 81.28125 C 131.335938 80.632812 134.28125 80.28125 136.84375 80.414062 L 141.164062 80.640625 L 152.496094 68.550781 C 158.726562 61.902344 165.519531 54.839844 167.589844 52.855469 C 172.320312 48.332031 179.097656 45.179688 185.382812 44.59375 L 190.136719 44.152344 L 192.621094 39.222656 C 193.984375 36.507812 194.898438 34.085938 194.648438 33.832031 C 194.328125 33.519531 192.546875 33.378906 190.261719 33.394531 Z M 183.210938 76.648438 C 184.105469 76.625 185.105469 77.078125 186.015625 78.082031 C 187.113281 79.289062 187.199219 79.867188 186.511719 81.378906 C 185.125 84.417969 180.515625 83.625 180.515625 80.34375 C 180.515625 78.046875 181.71875 76.6875 183.210938 76.648438 Z M 170.507812 81.035156 C 170.21875 81.039062 168.894531 81.800781 167.167969 82.972656 C 161.511719 86.824219 156.128906 89.121094 151.761719 89.550781 C 148.628906 89.863281 147.164062 89.585938 143.882812 88.042969 C 137.042969 84.828125 129.472656 85.75 124.582031 90.386719 C 117.15625 97.441406 118.277344 109.917969 126.703125 113.996094 L 126.707031 113.996094 C 130.800781 115.976562 135.996094 115.863281 140.671875 113.679688 C 144.9375 111.695312 147.101562 109.121094 150.414062 102.085938 C 153.601562 95.320312 158.839844 91.757812 167.007812 90.796875 C 170.289062 90.414062 170.953125 90.101562 170.644531 89.121094 C 170.046875 87.242188 169.972656 82.058594 170.53125 81.15625 C 170.585938 81.074219 170.574219 81.035156 170.507812 81.035156 Z M 136.179688 90.945312 C 140.1875 90.996094 142.933594 92.769531 144.382812 96.234375 C 146.261719 100.734375 143.652344 106.558594 138.601562 109.132812 C 136.941406 109.984375 134.953125 110.277344 132.21875 110.085938 C 128.867188 109.851562 127.925781 109.445312 126.175781 107.484375 C 120.765625 101.429688 126.78125 91.085938 135.785156 90.949219 C 135.917969 90.945312 136.050781 90.945312 136.179688 90.945312 Z M 225.832031 99.324219 L 218.449219 107.199219 C 214.386719 111.53125 206.074219 120.035156 199.976562 126.09375 C 191.472656 134.546875 188.597656 137.894531 187.613281 140.472656 C 186.90625 142.316406 185.074219 145.1875 183.535156 146.851562 C 180.277344 150.382812 180.960938 150.589844 187.652344 148.105469 C 196.179688 144.9375 199.910156 142.035156 212.226562 128.996094 C 218.699219 122.148438 227.5625 112.882812 231.929688 108.414062 C 236.292969 103.945312 239.863281 100.070312 239.863281 99.804688 C 239.863281 99.542969 236.707031 99.324219 232.847656 99.324219 Z M 170.585938 122.769531 C 173.527344 122.769531 174.394531 123.117188 176.171875 125.019531 C 178.742188 127.773438 179.492188 131.285156 178.300781 134.996094 C 177.242188 138.28125 175.835938 140.058594 172.824219 141.921875 C 167.011719 145.515625 160 141.652344 160 134.859375 C 160 127.796875 164.402344 122.769531 170.585938 122.769531 Z M 170.585938 122.769531 "/>
+</svg>
+
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#about" class="nav-a">O nas</a>
+    <a href="#cennik" class="nav-a">Cennik</a>
+    <a href="#portfolio" class="nav-a">Portfolio</a>
+    <a href="#opinie" class="nav-a">Opinie</a>
+    <a href="#kontakt" class="nav-a">Kontakt</a>
+    <a href="https://booksy.com/pl-pl/343473_cuprumcut-barbershop_barber-shop_15486_lubin#ba_s=sh_1" target="_blank" rel="noopener" class="btn" style="padding:11px 26px;font-size:.64rem">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Zarezerwuj
+    </a>
+  </div>
+  <a href="https://booksy.com/pl-pl/343473_cuprumcut-barbershop_barber-shop_15486_lubin#ba_s=sh_1" target="_blank" rel="noopener" class="nav-mobile-cta">Zarezerwuj →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-rule"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="eyebrow h1">
+      <span class="eyebrow-rule"></span>Barber Shop · Lubin<span class="eyebrow-rule"></span>
+    </div>
+    <div class="h2" style="margin-bottom:36px">
+      <svg id="cuprumcut-logo-hero" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="auto" style="max-width:clamp(240px,40vw,420px)" viewBox="0 0 375 252.137314">
+<defs>
+<clipPath id="clip-0">
+<path clip-rule="nonzero" d="M 0.640625 180 L 38 180 L 38 222 L 0.640625 222 Z M 0.640625 180 "/>
+</clipPath>
+<clipPath id="clip-1">
+<path clip-rule="nonzero" d="M 343 181 L 374.359375 181 L 374.359375 221 L 343 221 Z M 343 181 "/>
+</clipPath>
+<clipPath id="clip-2">
+<path clip-rule="nonzero" d="M 79 232 L 94 232 L 94 251.277344 L 79 251.277344 Z M 79 232 "/>
+</clipPath>
+<clipPath id="clip-3">
+<path clip-rule="nonzero" d="M 98 232 L 118 232 L 118 251.277344 L 98 251.277344 Z M 98 232 "/>
+</clipPath>
+<clipPath id="clip-4">
+<path clip-rule="nonzero" d="M 123 232 L 140 232 L 140 251.277344 L 123 251.277344 Z M 123 232 "/>
+</clipPath>
+<clipPath id="clip-5">
+<path clip-rule="nonzero" d="M 146 232 L 162 232 L 162 251.277344 L 146 251.277344 Z M 146 232 "/>
+</clipPath>
+<clipPath id="clip-6">
+<path clip-rule="nonzero" d="M 168 232 L 182 232 L 182 251.277344 L 168 251.277344 Z M 168 232 "/>
+</clipPath>
+<clipPath id="clip-7">
+<path clip-rule="nonzero" d="M 189 232 L 205 232 L 205 251.277344 L 189 251.277344 Z M 189 232 "/>
+</clipPath>
+<clipPath id="clip-8">
+<path clip-rule="nonzero" d="M 210 232 L 225 232 L 225 251.277344 L 210 251.277344 Z M 210 232 "/>
+</clipPath>
+<clipPath id="clip-9">
+<path clip-rule="nonzero" d="M 232 232 L 248 232 L 248 251.277344 L 232 251.277344 Z M 232 232 "/>
+</clipPath>
+<clipPath id="clip-10">
+<path clip-rule="nonzero" d="M 254 232 L 275 232 L 275 251.277344 L 254 251.277344 Z M 254 232 "/>
+</clipPath>
+<clipPath id="clip-11">
+<path clip-rule="nonzero" d="M 281 232 L 296 232 L 296 251.277344 L 281 251.277344 Z M 281 232 "/>
+</clipPath>
+</defs>
+<g clip-path="url(#clip-0)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 21.160156 213.066406 C 25.496094 213.066406 29.039062 211.355469 31.785156 207.925781 L 37.4375 213.75 C 32.953125 218.796875 27.660156 221.320312 21.554688 221.320312 C 15.488281 221.320312 10.476562 219.402344 6.515625 215.554688 C 2.597656 211.714844 0.640625 206.871094 0.640625 201.027344 C 0.640625 195.148438 2.636719 190.25 6.628906 186.332031 C 10.664062 182.410156 15.582031 180.453125 21.382812 180.453125 C 27.867188 180.453125 33.292969 182.921875 37.664062 187.855469 L 32.183594 194.074219 C 29.394531 190.609375 25.929688 188.875 21.78125 188.875 C 18.464844 188.875 15.617188 189.96875 13.246094 192.15625 C 10.910156 194.300781 9.742188 197.222656 9.742188 200.914062 C 9.742188 204.570312 10.855469 207.507812 13.078125 209.734375 C 15.300781 211.957031 17.992188 213.066406 21.160156 213.066406 Z M 21.160156 213.066406 "/>
+</g>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 54.851562 210.691406 C 56.320312 212.503906 58.300781 213.410156 60.789062 213.410156 C 63.277344 213.410156 65.234375 212.503906 66.667969 210.691406 C 68.136719 208.847656 68.871094 206.339844 68.871094 203.175781 L 68.871094 181.355469 L 77.6875 181.355469 L 77.6875 203.460938 C 77.6875 209.1875 76.109375 213.597656 72.941406 216.6875 C 69.777344 219.738281 65.726562 221.265625 60.789062 221.265625 C 55.847656 221.265625 51.78125 219.722656 48.578125 216.628906 C 45.414062 213.539062 43.828125 209.152344 43.828125 203.460938 L 43.828125 181.355469 L 52.648438 181.355469 L 52.648438 203.175781 C 52.648438 206.339844 53.382812 208.847656 54.851562 210.691406 Z M 54.851562 210.691406 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 100.8125 181.355469 C 106.878906 181.355469 111.289062 182.542969 114.039062 184.917969 C 116.828125 187.253906 118.222656 190.871094 118.222656 195.769531 C 118.222656 200.632812 116.789062 204.195312 113.925781 206.453125 C 111.101562 208.714844 106.765625 209.847656 100.925781 209.847656 L 95.667969 209.847656 L 95.667969 220.871094 L 86.847656 220.871094 L 86.847656 181.355469 Z M 101.601562 202.214844 C 104.542969 202.214844 106.539062 201.628906 107.59375 200.460938 C 108.648438 199.257812 109.179688 197.523438 109.179688 195.261719 C 109.179688 192.964844 108.480469 191.339844 107.085938 190.398438 C 105.730469 189.421875 103.597656 188.929688 100.699219 188.929688 L 95.667969 188.929688 L 95.667969 202.214844 Z M 101.601562 202.214844 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 157.167969 194.472656 C 157.167969 200.800781 154.667969 204.894531 149.652344 206.738281 L 159.65625 220.871094 L 148.804688 220.871094 L 140.042969 208.265625 L 133.9375 208.265625 L 133.9375 220.871094 L 125.121094 220.871094 L 125.121094 181.355469 L 140.101562 181.355469 C 146.242188 181.355469 150.613281 182.390625 153.214844 184.46875 C 155.855469 186.539062 157.167969 189.875 157.167969 194.472656 Z M 140.382812 200.632812 C 143.398438 200.632812 145.453125 200.144531 146.542969 199.164062 C 147.636719 198.179688 148.179688 196.640625 148.179688 194.527344 C 148.179688 192.378906 147.617188 190.910156 146.488281 190.121094 C 145.355469 189.324219 143.378906 188.929688 140.550781 188.929688 L 133.9375 188.929688 L 133.9375 200.632812 Z M 140.382812 200.632812 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 176.675781 210.691406 C 178.144531 212.503906 180.125 213.410156 182.609375 213.410156 C 185.097656 213.410156 187.054688 212.503906 188.488281 210.691406 C 189.960938 208.847656 190.691406 206.339844 190.691406 203.175781 L 190.691406 181.355469 L 199.515625 181.355469 L 199.515625 203.460938 C 199.515625 209.1875 197.929688 213.597656 194.765625 216.6875 C 191.597656 219.738281 187.546875 221.265625 182.609375 221.265625 C 177.675781 221.265625 173.601562 219.722656 170.398438 216.628906 C 167.234375 213.539062 165.652344 209.152344 165.652344 203.460938 L 165.652344 181.355469 L 174.46875 181.355469 L 174.46875 203.175781 C 174.46875 206.339844 175.207031 208.847656 176.675781 210.691406 Z M 176.675781 210.691406 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 244.058594 195.996094 L 233.375 217.589844 L 228.117188 217.589844 L 217.492188 195.996094 L 217.492188 220.871094 L 208.667969 220.871094 L 208.667969 181.355469 L 220.597656 181.355469 L 230.773438 203.0625 L 241.003906 181.355469 L 252.878906 181.355469 L 252.878906 220.871094 L 244.058594 220.871094 Z M 244.058594 195.996094 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 280.746094 213.066406 C 285.082031 213.066406 288.621094 211.355469 291.375 207.925781 L 297.027344 213.75 C 292.542969 218.796875 287.25 221.320312 281.140625 221.320312 C 275.074219 221.320312 270.0625 219.402344 266.105469 215.554688 C 262.183594 211.714844 260.226562 206.871094 260.226562 201.027344 C 260.226562 195.148438 262.222656 190.25 266.21875 186.332031 C 270.25 182.410156 275.167969 180.453125 280.972656 180.453125 C 287.453125 180.453125 292.882812 182.921875 297.253906 187.855469 L 291.769531 194.074219 C 288.980469 190.609375 285.511719 188.875 281.371094 188.875 C 278.054688 188.875 275.207031 189.96875 272.832031 192.15625 C 270.496094 194.300781 269.328125 197.222656 269.328125 200.914062 C 269.328125 204.570312 270.4375 207.507812 272.660156 209.734375 C 274.886719 211.957031 277.582031 213.066406 280.746094 213.066406 Z M 280.746094 213.066406 "/>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 314.4375 210.691406 C 315.910156 212.503906 317.886719 213.410156 320.375 213.410156 C 322.859375 213.410156 324.824219 212.503906 326.253906 210.691406 C 327.722656 208.847656 328.457031 206.339844 328.457031 203.175781 L 328.457031 181.355469 L 337.277344 181.355469 L 337.277344 203.460938 C 337.277344 209.1875 335.691406 213.597656 332.527344 216.6875 C 329.363281 219.738281 325.308594 221.265625 320.375 221.265625 C 315.4375 221.265625 311.363281 219.722656 308.164062 216.628906 C 304.996094 213.539062 303.414062 209.152344 303.414062 203.460938 L 303.414062 181.355469 L 312.234375 181.355469 L 312.234375 203.175781 C 312.234375 206.339844 312.96875 208.847656 314.4375 210.691406 Z M 314.4375 210.691406 "/>
+<g clip-path="url(#clip-1)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 363.167969 188.988281 L 363.167969 220.871094 L 354.347656 220.871094 L 354.347656 188.988281 L 343.15625 188.988281 L 343.15625 181.355469 L 374.359375 181.355469 L 374.359375 188.988281 Z M 363.167969 188.988281 "/>
+</g>
+<g clip-path="url(#clip-2)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 87.109375 251.066406 L 79.035156 251.066406 L 79.035156 232.613281 L 86.214844 232.613281 C 87.464844 232.613281 88.539062 232.765625 89.433594 233.0625 C 90.347656 233.363281 91.023438 233.765625 91.464844 234.277344 C 92.308594 235.230469 92.734375 236.300781 92.734375 237.5 C 92.734375 238.941406 92.273438 240.015625 91.359375 240.71875 C 91.023438 240.964844 90.796875 241.125 90.675781 241.195312 C 90.550781 241.246094 90.332031 241.34375 90.011719 241.484375 C 91.15625 241.730469 92.066406 242.25 92.734375 243.042969 C 93.417969 243.8125 93.761719 244.785156 93.761719 245.945312 C 93.761719 247.226562 93.320312 248.363281 92.441406 249.351562 C 91.402344 250.496094 89.628906 251.066406 87.109375 251.066406 Z M 82.148438 240.273438 L 86.109375 240.273438 C 88.359375 240.273438 89.488281 239.503906 89.488281 237.976562 C 89.488281 237.09375 89.214844 236.460938 88.667969 236.070312 C 88.121094 235.6875 87.277344 235.492188 86.136719 235.492188 L 82.148438 235.492188 Z M 82.148438 248.191406 L 87.03125 248.191406 C 88.175781 248.191406 89.046875 248.015625 89.644531 247.660156 C 90.261719 247.289062 90.570312 246.605469 90.570312 245.601562 C 90.570312 243.964844 89.257812 243.148438 86.632812 243.148438 L 82.148438 243.148438 Z M 82.148438 248.191406 "/>
+</g>
+<g clip-path="url(#clip-3)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 103.503906 246.871094 L 101.65625 251.066406 L 98.328125 251.066406 L 106.460938 232.613281 L 109.785156 232.613281 L 117.917969 251.066406 L 114.589844 251.066406 L 112.742188 246.871094 Z M 111.476562 243.992188 L 108.125 236.390625 L 104.769531 243.992188 Z M 111.476562 243.992188 "/>
+</g>
+<g clip-path="url(#clip-4)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 138.640625 238.605469 C 138.640625 241.648438 137.308594 243.570312 134.652344 244.363281 L 139.484375 251.066406 L 135.523438 251.066406 L 131.113281 244.859375 L 127.023438 244.859375 L 127.023438 251.066406 L 123.910156 251.066406 L 123.910156 232.613281 L 130.773438 232.613281 C 133.585938 232.613281 135.605469 233.089844 136.820312 234.039062 C 138.03125 234.988281 138.640625 236.511719 138.640625 238.605469 Z M 130.90625 242.039062 C 132.664062 242.039062 133.859375 241.765625 134.492188 241.222656 C 135.128906 240.675781 135.445312 239.804688 135.445312 238.605469 C 135.445312 237.394531 135.121094 236.566406 134.464844 236.125 C 133.816406 235.671875 132.65625 235.441406 130.980469 235.441406 L 127.023438 235.441406 L 127.023438 242.039062 Z M 130.90625 242.039062 "/>
+</g>
+<g clip-path="url(#clip-5)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 154.636719 251.066406 L 146.558594 251.066406 L 146.558594 232.613281 L 153.738281 232.613281 C 154.984375 232.613281 156.0625 232.765625 156.960938 233.0625 C 157.875 233.363281 158.550781 233.765625 158.992188 234.277344 C 159.835938 235.230469 160.257812 236.300781 160.257812 237.5 C 160.257812 238.941406 159.800781 240.015625 158.886719 240.71875 C 158.550781 240.964844 158.324219 241.125 158.199219 241.195312 C 158.078125 241.246094 157.855469 241.34375 157.539062 241.484375 C 158.683594 241.730469 159.585938 242.25 160.257812 243.042969 C 160.941406 243.8125 161.289062 244.785156 161.289062 245.945312 C 161.289062 247.226562 160.847656 248.363281 159.96875 249.351562 C 158.929688 250.496094 157.152344 251.066406 154.636719 251.066406 Z M 149.671875 240.273438 L 153.632812 240.273438 C 155.886719 240.273438 157.011719 239.503906 157.011719 237.976562 C 157.011719 237.09375 156.738281 236.460938 156.191406 236.070312 C 155.648438 235.6875 154.804688 235.492188 153.660156 235.492188 L 149.671875 235.492188 Z M 149.671875 248.191406 L 154.554688 248.191406 C 155.699219 248.191406 156.570312 248.015625 157.167969 247.660156 C 157.785156 247.289062 158.09375 246.605469 158.09375 245.601562 C 158.09375 243.964844 156.78125 243.148438 154.160156 243.148438 L 149.671875 243.148438 Z M 149.671875 248.191406 "/>
+</g>
+<g clip-path="url(#clip-6)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 181.585938 232.613281 L 181.585938 235.546875 L 171.742188 235.546875 L 171.742188 240.425781 L 180.582031 240.425781 L 180.582031 243.199219 L 171.742188 243.199219 L 171.742188 248.136719 L 181.902344 248.136719 L 181.902344 251.066406 L 168.625 251.066406 L 168.625 232.613281 Z M 181.585938 232.613281 "/>
+</g>
+<g clip-path="url(#clip-7)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 204.050781 238.605469 C 204.050781 241.648438 202.722656 243.570312 200.066406 244.363281 L 204.898438 251.066406 L 200.933594 251.066406 L 196.527344 244.859375 L 192.4375 244.859375 L 192.4375 251.066406 L 189.320312 251.066406 L 189.320312 232.613281 L 196.183594 232.613281 C 199 232.613281 201.015625 233.089844 202.230469 234.039062 C 203.445312 234.988281 204.050781 236.511719 204.050781 238.605469 Z M 196.316406 242.039062 C 198.078125 242.039062 199.273438 241.765625 199.90625 241.222656 C 200.542969 240.675781 200.855469 239.804688 200.855469 238.605469 C 200.855469 237.394531 200.53125 236.566406 199.878906 236.125 C 199.230469 235.671875 198.070312 235.441406 196.394531 235.441406 L 192.4375 235.441406 L 192.4375 242.039062 Z M 196.316406 242.039062 "/>
+</g>
+<g clip-path="url(#clip-8)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 217.542969 235.042969 C 216.640625 235.042969 215.902344 235.230469 215.324219 235.597656 C 214.742188 235.964844 214.449219 236.53125 214.449219 237.285156 C 214.449219 238.027344 214.742188 238.597656 215.324219 239.003906 C 215.902344 239.390625 217.136719 239.8125 219.015625 240.273438 C 220.921875 240.726562 222.347656 241.371094 223.296875 242.199219 C 224.261719 243.023438 224.746094 244.246094 224.746094 245.867188 C 224.746094 247.464844 224.140625 248.769531 222.925781 249.773438 C 221.710938 250.773438 220.117188 251.277344 218.148438 251.277344 C 215.261719 251.277344 212.699219 250.285156 210.464844 248.296875 L 212.417969 245.945312 C 214.285156 247.5625 216.222656 248.375 218.226562 248.375 C 219.230469 248.375 220.023438 248.164062 220.601562 247.742188 C 221.199219 247.300781 221.5 246.730469 221.5 246.023438 C 221.5 245.300781 221.214844 244.75 220.65625 244.363281 C 220.113281 243.957031 219.160156 243.597656 217.800781 243.28125 C 216.449219 242.945312 215.421875 242.648438 214.714844 242.382812 C 214.011719 242.101562 213.386719 241.738281 212.84375 241.300781 C 211.75 240.472656 211.203125 239.203125 211.203125 237.5 C 211.203125 235.792969 211.820312 234.480469 213.054688 233.5625 C 214.304688 232.632812 215.839844 232.167969 217.671875 232.167969 C 218.851562 232.167969 220.023438 232.359375 221.183594 232.746094 C 222.347656 233.136719 223.347656 233.679688 224.191406 234.386719 L 222.527344 236.734375 C 221.984375 236.238281 221.242188 235.835938 220.3125 235.519531 C 219.378906 235.203125 218.457031 235.042969 217.542969 235.042969 Z M 217.542969 235.042969 "/>
+</g>
+<g clip-path="url(#clip-9)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 232.03125 251.066406 L 232.03125 232.613281 L 235.144531 232.613281 L 235.144531 240.613281 L 244.304688 240.613281 L 244.304688 232.613281 L 247.421875 232.613281 L 247.421875 251.066406 L 244.304688 251.066406 L 244.304688 243.519531 L 235.144531 243.519531 L 235.144531 251.066406 Z M 232.03125 251.066406 "/>
+</g>
+<g clip-path="url(#clip-10)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 269.117188 236.96875 C 267.871094 235.671875 266.332031 235.015625 264.503906 235.015625 C 262.671875 235.015625 261.125 235.671875 259.855469 236.96875 C 258.605469 238.273438 257.980469 239.855469 257.980469 241.722656 C 257.980469 243.570312 258.605469 245.144531 259.855469 246.445312 C 261.125 247.75 262.671875 248.398438 264.503906 248.398438 C 266.332031 248.398438 267.871094 247.75 269.117188 246.445312 C 270.386719 245.144531 271.023438 243.570312 271.023438 241.722656 C 271.023438 239.855469 270.386719 238.273438 269.117188 236.96875 Z M 271.414062 248.53125 C 269.550781 250.347656 267.246094 251.25 264.503906 251.25 C 261.757812 251.25 259.449219 250.347656 257.585938 248.53125 C 255.71875 246.703125 254.785156 244.433594 254.785156 241.722656 C 254.785156 238.996094 255.71875 236.726562 257.585938 234.910156 C 259.449219 233.082031 261.757812 232.167969 264.503906 232.167969 C 267.246094 232.167969 269.550781 233.082031 271.414062 234.910156 C 273.28125 236.726562 274.214844 238.996094 274.214844 241.722656 C 274.214844 244.433594 273.28125 246.703125 271.414062 248.53125 Z M 271.414062 248.53125 "/>
+</g>
+<g clip-path="url(#clip-11)">
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 287.914062 232.613281 C 290.710938 232.613281 292.753906 233.152344 294.039062 234.226562 C 295.320312 235.300781 295.964844 236.957031 295.964844 239.191406 C 295.964844 241.425781 295.308594 243.058594 293.988281 244.097656 C 292.683594 245.136719 290.679688 245.65625 287.96875 245.65625 L 284.695312 245.65625 L 284.695312 251.066406 L 281.582031 251.066406 L 281.582031 232.613281 Z M 288.3125 242.828125 C 290.035156 242.828125 291.207031 242.507812 291.824219 241.851562 C 292.457031 241.1875 292.773438 240.21875 292.773438 238.953125 C 292.773438 237.667969 292.375 236.761719 291.585938 236.230469 C 290.792969 235.707031 289.554688 235.441406 287.863281 235.441406 L 284.695312 235.441406 L 284.695312 242.828125 Z M 288.3125 242.828125 "/>
+</g>
+<path fill-rule="nonzero" fill="#b87333" fill-opacity="1" d="M 224.699219 0 C 224.546875 -0.0078125 224.261719 0.136719 223.84375 0.359375 C 220.011719 2.410156 215.246094 10.054688 189.109375 56.101562 L 174.753906 81.386719 L 175.597656 87.242188 C 177.921875 103.441406 175.03125 113 166.496094 117.324219 C 158.640625 121.308594 154.875 126.714844 154.875 134.015625 C 154.875 138.15625 156.199219 142.542969 158.117188 144.722656 C 158.730469 145.425781 159.222656 148.34375 159.40625 152.445312 C 159.65625 157.972656 160.046875 159.660156 161.804688 162.882812 C 164 166.914062 164.359375 167.207031 165.59375 165.976562 C 166.117188 165.453125 165.910156 163.917969 164.941406 161.039062 C 162.527344 153.890625 164.191406 149.660156 169.777344 148.765625 C 178.824219 147.308594 185.554688 137.976562 183.894531 129.1875 C 183.644531 127.875 182.457031 124.824219 181.25 122.40625 C 176.917969 113.71875 178.144531 108.984375 194.429688 71.484375 C 209.128906 37.628906 222.277344 7.050781 223.824219 3.132812 C 224.75 0.789062 225.039062 0.0234375 224.699219 0 Z M 255.371094 23.675781 L 251.097656 26.6875 C 223.277344 46.257812 204.921875 59.777344 204.171875 61.25 C 203.664062 62.242188 201.554688 66.941406 199.484375 71.699219 C 197.417969 76.453125 195.851562 80.453125 195.996094 80.59375 C 196.152344 80.734375 204.347656 73.769531 214.21875 65.113281 C 251.054688 32.824219 250.429688 33.4375 253.75 26.882812 Z M 190.261719 33.394531 C 187.316406 33.414062 183.527344 33.691406 180.910156 34.171875 C 175.585938 35.15625 169.691406 37.730469 165.199219 41.027344 C 163.300781 42.417969 155.511719 50.253906 147.886719 58.4375 C 140.261719 66.621094 132.070312 75.375 129.679688 77.894531 C 125.050781 82.777344 125.042969 82.96875 129.597656 81.28125 C 131.335938 80.632812 134.28125 80.28125 136.84375 80.414062 L 141.164062 80.640625 L 152.496094 68.550781 C 158.726562 61.902344 165.519531 54.839844 167.589844 52.855469 C 172.320312 48.332031 179.097656 45.179688 185.382812 44.59375 L 190.136719 44.152344 L 192.621094 39.222656 C 193.984375 36.507812 194.898438 34.085938 194.648438 33.832031 C 194.328125 33.519531 192.546875 33.378906 190.261719 33.394531 Z M 183.210938 76.648438 C 184.105469 76.625 185.105469 77.078125 186.015625 78.082031 C 187.113281 79.289062 187.199219 79.867188 186.511719 81.378906 C 185.125 84.417969 180.515625 83.625 180.515625 80.34375 C 180.515625 78.046875 181.71875 76.6875 183.210938 76.648438 Z M 170.507812 81.035156 C 170.21875 81.039062 168.894531 81.800781 167.167969 82.972656 C 161.511719 86.824219 156.128906 89.121094 151.761719 89.550781 C 148.628906 89.863281 147.164062 89.585938 143.882812 88.042969 C 137.042969 84.828125 129.472656 85.75 124.582031 90.386719 C 117.15625 97.441406 118.277344 109.917969 126.703125 113.996094 L 126.707031 113.996094 C 130.800781 115.976562 135.996094 115.863281 140.671875 113.679688 C 144.9375 111.695312 147.101562 109.121094 150.414062 102.085938 C 153.601562 95.320312 158.839844 91.757812 167.007812 90.796875 C 170.289062 90.414062 170.953125 90.101562 170.644531 89.121094 C 170.046875 87.242188 169.972656 82.058594 170.53125 81.15625 C 170.585938 81.074219 170.574219 81.035156 170.507812 81.035156 Z M 136.179688 90.945312 C 140.1875 90.996094 142.933594 92.769531 144.382812 96.234375 C 146.261719 100.734375 143.652344 106.558594 138.601562 109.132812 C 136.941406 109.984375 134.953125 110.277344 132.21875 110.085938 C 128.867188 109.851562 127.925781 109.445312 126.175781 107.484375 C 120.765625 101.429688 126.78125 91.085938 135.785156 90.949219 C 135.917969 90.945312 136.050781 90.945312 136.179688 90.945312 Z M 225.832031 99.324219 L 218.449219 107.199219 C 214.386719 111.53125 206.074219 120.035156 199.976562 126.09375 C 191.472656 134.546875 188.597656 137.894531 187.613281 140.472656 C 186.90625 142.316406 185.074219 145.1875 183.535156 146.851562 C 180.277344 150.382812 180.960938 150.589844 187.652344 148.105469 C 196.179688 144.9375 199.910156 142.035156 212.226562 128.996094 C 218.699219 122.148438 227.5625 112.882812 231.929688 108.414062 C 236.292969 103.945312 239.863281 100.070312 239.863281 99.804688 C 239.863281 99.542969 236.707031 99.324219 232.847656 99.324219 Z M 170.585938 122.769531 C 173.527344 122.769531 174.394531 123.117188 176.171875 125.019531 C 178.742188 127.773438 179.492188 131.285156 178.300781 134.996094 C 177.242188 138.28125 175.835938 140.058594 172.824219 141.921875 C 167.011719 145.515625 160 141.652344 160 134.859375 C 160 127.796875 164.402344 122.769531 170.585938 122.769531 Z M 170.585938 122.769531 "/>
+</svg>
+
+    </div>
+    <p class="hero-sub h3">Miedziany standard barberskiego rzemiosła w Lubinie.<br>Precyzja, którą czuć. Styl, który zostaje.</p>
+    <div class="hero-ctas h4">
+      <a href="https://booksy.com/pl-pl/343473_cuprumcut-barbershop_barber-shop_15486_lubin#ba_s=sh_1" target="_blank" rel="noopener" class="btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Zarezerwuj Teraz
+      </a>
+      <a href="tel:662233224" class="hero-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.63 4.91 2 2 0 0 1 3.6 2.72h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 18z"/></svg>
+        662 233 224
+      </a>
+    </div>
+    <div class="stats-bar hf">
+      <div><div class="stat-val">5.0</div><div class="stat-lbl">Ocena Booksy</div></div>
+      <div><div class="stat-val">214</div><div class="stat-lbl">Opinii klientów</div></div>
+      <div><div class="stat-val">100%</div><div class="stat-lbl">Satysfakcja</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4a443e" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="section" style="background:var(--s1)">
+  <div class="wrap">
+    <div class="eyebrow"><span class="eyebrow-rule"></span>O nas</div>
+    <div>
+      <!-- Intro -->
+      <h2 class="section-title" style="max-width:560px;margin-bottom:20px">Rzemiosło widoczne<br><span class="copper">w każdym detalu.</span></h2>
+      <p style="font-size:1rem;font-weight:300;color:var(--mu);line-height:1.85;max-width:620px;margin-bottom:48px">
+        CuprumCut to miejsce, gdzie każdy detal ma znaczenie. Nasz zespół łączy precyzję, pasję i indywidualne podejście do każdego klienta. Zero pośpiechu — wychodząc, wyglądasz dokładnie tak, jak chciałeś.
+      </p>
+
+      <!-- Rating bar -->
+      <div style="display:flex;align-items:center;gap:22px;padding:20px 28px;background:var(--bg);border:1px solid var(--bo);margin-bottom:48px;flex-wrap:wrap">
+        <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--cu);line-height:1">5.0</div>
+        <div style="border-left:1px solid var(--bo);padding-left:22px">
+          <div style="display:flex;gap:3px;margin-bottom:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div style="font-size:.8rem;color:var(--mu);line-height:1.55">214 opinii Booksy &nbsp;·&nbsp; <span class="copper-light" style="font-weight:500">Ocena doskonała</span></div>
+        </div>
+      </div>
+
+      <!-- Team cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+
+        <!-- Dawid -->
+        <div style="background:var(--bg);border:1px solid var(--bo);border-top:3px solid var(--cu);padding:36px 32px">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+            <img src="data:image/webp;base64,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" alt="Dawid" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--cu)">
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--tx)">Dawid</div>
+              <div style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cu);margin-top:3px">Właściciel &amp; Barber</div>
+            </div>
+          </div>
+          <p style="font-size:.9rem;font-weight:300;color:var(--mu);line-height:1.75">
+            Założyciel CuprumCut. Barber z pasją i artystyczną wizją — sam strzyże i dba o każdy detal wizyty. Stawia na precyzję, doradza w doborze stylu i traktuje rzemiosło jak sztukę.
+          </p>
+          <div style="margin-top:20px;padding-top:18px;border-top:1px solid var(--bo);display:flex;flex-direction:column;gap:8px">
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Strzyżenie męskie — 80 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Combo (włosy + broda) — 130 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Strzyżenie brody — 70 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Modelowanie włosów — 20 zł</span></div>
+          </div>
+        </div>
+
+        <!-- Milena -->
+        <div style="background:var(--bg);border:1px solid var(--bo);border-top:3px solid var(--bm);padding:36px 32px">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+            <img src="data:image/webp;base64,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" alt="Milena" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--bm)">
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--tx)">Milena</div>
+              <div style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);margin-top:3px">Barber</div>
+            </div>
+          </div>
+          <p style="font-size:.9rem;font-weight:300;color:var(--mu);line-height:1.75">
+            Pewna ręka i świetne wyczucie stylu. Milena dba o komfort klienta od pierwszej chwili — miła atmosfera, pełne wsparcie w doborze fryzury i efekty, które mówią same za siebie.
+          </p>
+          <div style="margin-top:20px;padding-top:18px;border-top:1px solid var(--bo);display:flex;flex-direction:column;gap:8px">
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Strzyżenie męskie — 80 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Combo (włosy + broda) — 130 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Strzyżenie brody — 70 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Odsiwianie brody (cover) — 60 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Odsiwianie włosów (cover) — 70 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Odsiwianie combo (cover) — 120 zł</span></div>
+            <div class="fact-tile" style="margin-bottom:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" style="flex-shrink:0"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><span style="font-size:.82rem;font-weight:300;color:var(--mu)">Combo + cover brody — 170 zł</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section id="cennik" class="section">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="eyebrow center"><span class="eyebrow-rule"></span>Cennik<span class="eyebrow-rule"></span></div>
+    </div>
+    <div class="price-grid">
+      <div class="price-card" style="background:var(--s1)">
+        <div class="pc-name">Strzyżenie Męskie</div>
+        <div class="pc-price"><span class="pc-num">80</span><span class="pc-zl">zł</span></div>
+        <div class="pc-dur"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a443e" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>60 min</div>
+        <div class="pc-rule"></div>
+        <div class="pc-desc">Klasyczna lub nowoczesna stylizacja idealnie dopasowana do kształtu twarzy.</div>
+      </div>
+      <div class="price-card" style="background:var(--s3)">
+        <div class="pc-badge">★ Najpopularniejszy</div>
+        <div class="pc-name">Combo — Włosy &amp; Broda</div>
+        <div class="pc-price"><span class="pc-num">130</span><span class="pc-zl">zł</span></div>
+        <div class="pc-dur"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a443e" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>60 min</div>
+        <div class="pc-rule"></div>
+        <div class="pc-desc">Kompletny look w jednej wizycie. Włosy i broda w pełnej harmonii.</div>
+      </div>
+      <div class="price-card" style="background:var(--s2)">
+        <div class="pc-name">Strzyżenie Brody</div>
+        <div class="pc-price"><span class="pc-num">70</span><span class="pc-zl">zł</span></div>
+        <div class="pc-dur"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a443e" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>30 min</div>
+        <div class="pc-rule"></div>
+        <div class="pc-desc">Precyzyjne kształtowanie, konturowanie i pielęgnacja z gorącym ręcznikiem.</div>
+      </div>
+      <div class="price-card" style="background:var(--s1)">
+        <div class="pc-name">Modelowanie</div>
+        <div class="pc-price"><span class="pc-num">20</span><span class="pc-zl">zł</span></div>
+        <div class="pc-dur"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a443e" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10 min</div>
+        <div class="pc-rule"></div>
+        <div class="pc-desc">Szybka korekta linii i profesjonalne wykończenie stylu.</div>
+      </div>
+      <div class="price-card" style="background:var(--s2)">
+        <div class="pc-name">Odsiwianie brody (cover)</div>
+        <div class="pc-price"><span class="pc-num">60</span><span class="pc-zl">zł</span></div>
+        <div class="pc-dur"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a443e" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>20 min</div>
+        <div class="pc-rule"></div>
+        <div class="pc-desc">Naturalne krycie siwizny brody. Efekt świeży i długotrwały.</div>
+      </div>
+      <div class="price-card" style="background:var(--s1)">
+        <div class="pc-name">Odsiwianie włosów (cover)</div>
+        <div class="pc-price"><span class="pc-num">70</span><span class="pc-zl">zł</span></div>
+        <div class="pc-dur"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a443e" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>30 min</div>
+        <div class="pc-rule"></div>
+        <div class="pc-desc">Krycie siwizny włosów z naturalnym, młodszym efektem.</div>
+      </div>
+      <div class="price-card" style="background:var(--s3)">
+        <div class="pc-name">Combo + cover brody</div>
+        <div class="pc-price"><span class="pc-num">170</span><span class="pc-zl">zł</span></div>
+        <div class="pc-dur"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a443e" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1g 15 min</div>
+        <div class="pc-rule"></div>
+        <div class="pc-desc">Kompletna sesja: włosy, broda i krycie siwizny — wszystko w jednej wizycie.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="https://booksy.com/pl-pl/343473_cuprumcut-barbershop_barber-shop_15486_lubin#ba_s=sh_1" target="_blank" rel="noopener" class="btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Zarezerwuj wizytę online
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section" style="background:var(--s2)">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="eyebrow center"><span class="eyebrow-rule"></span>Nasze Prace<span class="eyebrow-rule"></span></div>
+      <h2 class="section-title">Każde cięcie to<br><span class="copper">osobna historia.</span></h2>
+    </div>
+    <div class="bento">
+      <div class="bento-item bento-main"><img src="images/foto1.jpg" alt="CuprumCut Barbershop – salon" loading="lazy"/></div>
+      <div class="bento-item"><img src="images/foto2.jpg" alt="Strzyżenie fade" loading="lazy"/></div>
+      <div class="bento-item"><img src="images/foto3.png" alt="Wnętrze salonu" loading="lazy"/></div>
+      <div class="bento-item"><img src="images/foto4.jpg" alt="Salon – widok szeroki" loading="lazy"/></div>
+      <div class="bento-item"><img src="images/foto5.jpg" alt="Taper fade" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REVIEWS -->
+<section id="opinie" class="section" style="background:var(--s1)">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="eyebrow center"><span class="eyebrow-rule"></span>Opinie Klientów<span class="eyebrow-rule"></span></div>
+      <h2 class="section-title">Mówią sami<br><span class="copper">za siebie.</span></h2>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;background:var(--s2);border:1px solid var(--bo);padding:12px 22px;width:fit-content;margin-left:auto;margin-right:auto">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--cu)">5.0</span>
+        <span style="font-size:.75rem;color:var(--mu);letter-spacing:.05em">· 214 opinii na</span>
+        <a href="https://booksy.com/pl-pl/343473_cuprumcut-barbershop_barber-shop_15486_lubin#ba_s=sh_1" target="_blank" rel="noopener" style="font-size:.75rem;font-weight:600;color:var(--cu);letter-spacing:.05em;text-decoration:none">Booksy ↗</a>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+            <div class="stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <span style="font-size:.68rem;color:var(--mu)">14 maj 2026</span>
+          </div>
+          <div style="font-size:.68rem;color:var(--cu);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px">Strzyżenie męskie · Dawid</div>
+          <p class="review-text">Przede wszystkim - pełen profesjonalizm. Duża dbałość o każdy detal, zarówno jeśli chodzi o samo strzyżenie, jak i podejście do klienta. Nowy lokal robi bardzo dobre wrażenie - estetyczny, nowoczesny i komfortowy. Fryzura dopracowana dokładnie tak, jak oczekiwałem. Zdecydowanie polecam każdemu, kto szuka dobrego fryzjera i jakościowej obsługi.</p>
+          <div class="review-author"><div class="review-avatar">A</div><div><div class="review-name">Aleksander</div><div class="review-src">Opinia Booksy</div></div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+            <div class="stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <span style="font-size:.68rem;color:var(--mu)">13 maj 2026</span>
+          </div>
+          <div style="font-size:.68rem;color:var(--cu);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px">Strzyżenie męskie · Dawid</div>
+          <p class="review-text">Byłem ostatnio u Dawida i serio kozak robota. Mega dokładnie mnie ostrzygł, wszystko dopracowane jak trzeba. Do tego bardzo normalny, rozmowny gość, więc nie siedzi się w niezręcznej ciszy 😄 Fryzura wyszła naprawdę świetnie, dawno nie byłem tak zadowolony po wyjściu od barbera. Na pewno będę wracał 👍</p>
+          <div class="review-author"><div class="review-avatar">D</div><div><div class="review-name">Dawid</div><div class="review-src">Opinia Booksy</div></div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <div class="review-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+            <div class="stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#b87333" stroke="#b87333" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <span style="font-size:.68rem;color:var(--mu)">13 maj 2026</span>
+          </div>
+          <div style="font-size:.68rem;color:var(--cu);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px">Combo włosy + broda · Dawid</div>
+          <p class="review-text">Dawid zrobił z mojej fryzury taki upgrade, że własna matka powiedziała mi „dzień dobry". Pełen profesjonalizm, świetny klimat i zero przypadkowych ruchów maszynką. Wyszedłem wyglądając jak człowiek, a nie jak przed wizytą. Polecam mocniej niż kebsa po 2 w nocy 😄</p>
+          <div class="review-author"><div class="review-avatar">P</div><div><div class="review-name">Patryk</div><div class="review-src">Opinia Booksy</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MAPA -->
+<section id="mapa" style="background:var(--bg);padding:100px 40px 0">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="eyebrow center"><span class="eyebrow-rule"></span>Lokalizacja<span class="eyebrow-rule"></span></div>
+      <h2 class="section-title">Znajdź nas<br><span class="copper">w Lubinie.</span></h2>
+      <p style="font-size:.95rem;font-weight:300;color:var(--mu);margin-top:18px;line-height:1.75">ul. Odrodzenia 28/4 · Lubin</p>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--bo);border-bottom:1px solid var(--bo)">
+    <iframe class="map-frame" title="CuprumCut Lokalizacja" src="https://maps.google.com/maps?q=ul.+Odrodzenia+28,+59-300+Lubin,+Poland&z=17&output=embed&hl=pl" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="parking-bar">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" stroke-linecap="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-6.09A2 2 0 0 0 11.44 4H4a2 2 0 0 0-2 2v6h18z"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+      Dostępny parking dla klientów
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer id="kontakt">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+          <span style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;letter-spacing:.1em;color:var(--tx)">CUPRUM<span class="copper">CUT</span></span>
+        </div>
+        <p style="font-size:.83rem;font-weight:300;color:var(--mu);line-height:1.75;max-width:190px">Miedziany standard barberskiego rzemiosła w Lubinie.</p>
+      </div>
+      <div>
+        <div class="foot-label">Adres</div>
+        <div class="foot-ico-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <address style="font-style:normal;font-size:.93rem;color:var(--tx);line-height:1.65;font-weight:300">ul. Odrodzenia 28/4<br>Lubin</address>
+        </div>
+      </div>
+      <div>
+        <div class="foot-label">Telefon</div>
+        <a href="tel:662233224" class="big-phone">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.63 4.91 2 2 0 0 1 3.6 2.72h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 18z"/></svg>
+          662 233 224
+        </a>
+      </div>
+      <div>
+        <div class="foot-label">Godziny otwarcia</div>
+        <div class="foot-ico-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b87333" stroke-width="1.6" stroke-linecap="round" style="flex-shrink:0;margin-top:3px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <div style="font-size:.88rem;font-weight:400;color:var(--tx)">Poniedziałek – Sobota</div>
+            <div class="big-hours">10:00 – 20:00</div>
+            <div style="font-size:.73rem;color:var(--mu);margin-top:5px">Niedziela: zamknięte</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="copy">© 2025 CuprumCut · Lubin · Wszelkie prawa zastrzeżone</div>
+      <div class="foot-right">
+        <a href="https://www.facebook.com/profile.php?id=100080979210235&locale=pl_PL" target="_blank" rel="noopener" class="social-icon" title="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/cuprumcut.lubin/" target="_blank" rel="noopener" class="social-icon" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <div class="foot-sep"></div>
+        <a href="https://booksy.com/pl-pl/343473_cuprumcut-barbershop_barber-shop_15486_lubin#ba_s=sh_1" target="_blank" rel="noopener" class="booksy-link">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Zarezerwuj na Booksy
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 55);
+  });
+</script>
+</body>
+</html>
